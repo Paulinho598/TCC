@@ -1,8 +1,10 @@
-C -> Criar usuário
-R -> Ver as informações do usuário
-U -> Atualizar as informações do usuário
-D -> Deletar usuário
+Usuário:
+
+C -> Criar conta
+R -> visualizar informações
+U -> Atualizar as informações
+D -> Deletar conta
 
 
-C -> Criar usuário
-D -> Deletar usuário
+C -> Criar conta
+D -> Deletar conta
