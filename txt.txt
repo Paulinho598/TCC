@@ -1,0 +1,8 @@
+C -> Criar usuário
+R -> Ver as informações do usuário
+U -> Atualizar as informações do usuário
+D -> Deletar usuário
+
+
+C -> Criar usuário
+D -> Deletar usuário
