@@ -1,58 +1,101 @@
-import { BackHandler, Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, TextInput, Pressable } from "react-native";
 
 export default function Index() {
   return (
-    <form action="get" style={styles.form}>
-        <Text style={styles.title}>Oi</Text>
-
-        <View style={styles.container}>
+    <View style={styles.container}>
+      <Text style={styles.title}>Cadastro</Text>
+        <View style={styles.form}>
           <View style={styles.items}>
-            <label htmlFor="nome">var1:</label>
-            <input type="text" name="nome" id="nome"/>
+            <Text style={styles.legenda}>Campo 1:</Text>
+            <TextInput style={styles.input} id="var1"></TextInput>
           </View>
 
           <View style={styles.items}>
-            <label htmlFor="nome">var2:</label>  
-            <input type="text" name="nome" id="nome"/>
+            <Text style={styles.legenda}>Campo 2:</Text>
+            <TextInput style={styles.input} id="var2"></TextInput>
           </View>
 
           <View style={styles.items}>
-            <label htmlFor="nome">var3:</label>  
-            <input type="text" name="nome" id="nome"/>
+            <Text style={styles.legenda}>Campo 3:</Text>
+            <TextInput style={styles.input} id="var3"></TextInput>
           </View>
 
           <View style={styles.items}>
-            <label htmlFor="nome">var4:</label>  
-            <input type="text" name="nome" id="nome"/>
+            <Text style={styles.legenda}>Campo 4:</Text>
+            <TextInput style={styles.input} id="var4"></TextInput>
           </View>
 
           <View style={styles.items}>
-            <label htmlFor="nome">var5:</label>  
-            <input type="text" name="nome" id="nome"/>
+            <Text style={styles.legenda}>Campo 5:</Text>
+            <TextInput style={styles.input} id="var5"></TextInput>
           </View>
+          <Pressable
+          style={styles.butaum}
+          onPress={() => alert("Cadastrado")}>
+            <Text style={styles.bilhetin}>CADASTRAR</Text>
+          </Pressable>
         </View>
-    </form>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   title:{
+    fontSize: 30,
+    marginBottom: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
 
+  form: {
+    gap: 10,
+    padding: 50,
+    borderWidth: 2,
+    borderRadius: 30,
+    backgroundColor: "lightblue",
   },
-  form:{
-    flex: 1,
-    alignContent: "center",
-    justifyContent: "center",
-  },
+
   container: {
-    gap: 5,
     flex: 1,
-    flexDirection: "column",
+    padding: 20,
+    alignItems: "center",
+    justifyContent: "flex-start",
+    backgroundColor: "lightpink",
   },
+
   items: {
-    flex: 1,
+    gap: 20,
     flexDirection: "row",
-    alignContent: "center",
-    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  input: {
+    flex: 1,
+    padding: 1.5,
+    borderWidth: 1,
+    borderRadius: 4,
+    borderColor: 'black',
+  },
+
+  butaum:{
+    padding: 6,
+    borderWidth: 2,
+    marginTop: 20,
+    margin: "auto",
+    marginBottom: -30,
+    borderRadius: 20,
+    backgroundColor: "darkblue",
+  },
+
+  bilhetin:{
+    fontSize: 13,
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+
+  legenda:{
+    fontSize: 20,
+    fontWeight: "bold",
   }
 })
