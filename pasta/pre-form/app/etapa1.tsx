@@ -5,8 +5,8 @@ import { TouchableOpacity } from "react-native";
 import { Text, View, Image, StyleSheet } from "react-native";
 
 export default function Etapa1() {
-  const [isChecked1, setChecked1] = useState(false);
-  const [isChecked2, setChecked2] = useState(false);
+  const [isChecked1, setChecked1] = useState(false)
+  const [isChecked2, setChecked2] = useState(false)
   const router = useRouter();
 
   function prosseguir(){

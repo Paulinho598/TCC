@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CheckBox from "expo-checkbox";
-import { Link, useRouter } from "expo-router";
+import { Link, router, useRouter } from "expo-router";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 export default function Etapa2(){
@@ -9,11 +9,14 @@ export default function Etapa2(){
     const [isChecked3, setChecked3] = useState(false);
     const [isChecked4, setChecked4] = useState(false);
 
-    function prosseguir(){
-        if(isChecked1 == true || isChecked2 == true || isChecked3 == true || isChecked4 == true){
-            alert("PÃO DE BATATA")
-        }else if(isChecked1 == false && isChecked2 == false && isChecked3 == false && isChecked4 == false){
-            alert("ESCOLHA ALGUMA DAS OPÇÕES ACIMA!")
+    function prosseguir() {
+        const isChecked = [isChecked1, isChecked2, isChecked3, isChecked4];
+    
+        if (isChecked.some(checked => checked)) {
+            alert("PÃO DE BATATA");
+            router.replace("/etapa3");
+        } else {
+            alert("ESCOLHA ALGUMA DAS OPÇÕES ACIMA!");
         }
     }
 
