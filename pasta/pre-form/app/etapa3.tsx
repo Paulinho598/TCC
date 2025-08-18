@@ -22,13 +22,8 @@ export default function Etapa3(){
     const router = useRouter()
 
     function prosseguir(){
-        if(isChecked1 == true && isChecked2 == true){
-            router.replace('/etapa2')
-        }else if(isChecked1 == true || isChecked2 == true){
-            alert("É NECESSÁRIO ACEITAR TODOS ACIMA!")
-        }else{
-            alert("PARA CONTINUARES, É NECESSÁRIO ACEITAR TODOS ACIMA!")
-        }
+        //router.replace('/etapa2')
+        alert("BANANA COM MEL")
     }
 
     return(
@@ -50,10 +45,10 @@ export default function Etapa3(){
                 />
                 <Text style={estilo.checkboxText}>Sim, tenho</Text>
             </View>
-
+                
             {isChecked1 && (
                 <View>
-                    <View style={estilo.checkboxContainerInside}>
+                    <View style={estilo.checkboxContainer}>
                         <CheckBox
                             value={isChecked2}
                             onValueChange={setChecked2}
@@ -61,7 +56,7 @@ export default function Etapa3(){
                         />
                         <Text style={estilo.checkboxText}>1</Text>
                     </View>
-                    <View style={estilo.checkboxContainerInside}>
+                    <View style={estilo.checkboxContainer}>
                         <CheckBox
                             value={isChecked3}
                             onValueChange={setChecked3}
@@ -69,7 +64,7 @@ export default function Etapa3(){
                         />
                         <Text style={estilo.checkboxText}>2</Text>
                     </View>
-                    <View style={estilo.checkboxContainerInside}>
+                    <View style={estilo.checkboxContainer}>
                         <CheckBox
                             value={isChecked4}
                             onValueChange={setChecked4}
@@ -91,37 +86,9 @@ export default function Etapa3(){
                 }}
                 style={estilo.checkbox}
                 />
-                <Text style={estilo.checkboxText}>Sim, tenho</Text>
+                <Text style={estilo.checkboxText}>Não, não tenho.</Text>
             </View>
-
-            {isChecked5 && (
-                <View>
-                    <View style={estilo.checkboxContainer}>
-                        <CheckBox
-                            value={isChecked6}
-                            onValueChange={setChecked6}
-                            style={estilo.checkbox}
-                        />
-                        <Text style={estilo.checkboxText}>1</Text>
-                    </View>
-                    <View style={estilo.checkboxContainer}>
-                        <CheckBox
-                            value={isChecked7}
-                            onValueChange={setChecked7}
-                            style={estilo.checkbox}
-                        />
-                        <Text style={estilo.checkboxText}>2</Text>
-                    </View>
-                    <View style={estilo.checkboxContainer}>
-                        <CheckBox
-                            value={isChecked8}
-                            onValueChange={setChecked8}
-                            style={estilo.checkbox}
-                        />
-                        <Text style={estilo.checkboxText}>3</Text>
-                    </View>
-                </View>
-            )}
+        
             <View style={estilo.checkboxContainer}>
                 <CheckBox
                 value={isChecked9}
@@ -133,72 +100,89 @@ export default function Etapa3(){
                 }}
                 style={estilo.checkbox}
                 />
-                <Text style={estilo.checkboxText}>Sim, tenho</Text>
+                <Text style={estilo.checkboxText}>Não sei.</Text>
             </View>
 
-            {isChecked9 && (
-                <View>
-                    <View style={estilo.checkboxContainer}>
-                        <CheckBox
-                            value={isChecked10}
-                            onValueChange={setChecked10}
-                            style={estilo.checkbox}
-                        />
-                        <Text style={estilo.checkboxText}>1</Text>
-                    </View>
-                    <View style={estilo.checkboxContainer}>
-                        <CheckBox
-                            value={isChecked11}
-                            onValueChange={setChecked11}
-                            style={estilo.checkbox}
-                        />
-                        <Text style={estilo.checkboxText}>2</Text>
-                    </View>
-                    <View style={estilo.checkboxContainer}>
-                        <CheckBox
-                            value={isChecked12}
-                            onValueChange={setChecked12}
-                            style={estilo.checkbox}
-                        />
-                        <Text style={estilo.checkboxText}>3</Text>
-                    </View>
-                </View>
-            )}
+            <View style={estilo.btnContainer}>
+                    <TouchableOpacity 
+                        style={estilo.button}
+                        onPressIn={() => {
+                        prosseguir()
+                        }}>
+                    <Text style={estilo.buttonText}>AVANÇAR!</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 };
 
 const estilo = StyleSheet.create({
     container: {
-        flex: 1,
-        padding: 20,
-        borderWidth: 2,
-        borderRadius: 20,
-        marginVertical: 32,
-        alignItems: 'center',
-        marginHorizontal: 16,
-        backgroundColor: '#E0F7E9',
+      flex: 1,
+      padding: 20,
+      marginVertical: 32,
+      alignItems: 'center',
+      marginHorizontal: 16,
+      backgroundColor: '#E0F7E9',
     },
-
+  
     title: {
-        fontSize: 40,
-        fontWeight: 'bold',
+      fontSize: 40,
+      color: 'green',
+      textAlign: 'center',
     },
-
+  
+    bloco: {
+      padding: 5,
+      marginTop: 5,
+      width: '100%',
+      borderWidth: 2,
+      marginBottom: 20,
+      borderRadius: 30,
+      backgroundColor: 'lightgreen',
+    },
+  
     checkboxContainer: {
-        width: '100%',
-        marginBottom: 30,
-        flexDirection: 'row',
-        alignItems: 'flex-start',
+      width: '100%',
+      marginBottom: 30,
+      flexDirection: 'row',
+      alignItems: 'flex-start',
     },
-
+  
     checkbox: {
-        marginTop: 3,
-        marginRight: 10,
-        borderRadius: 30,
+      marginTop: 20,
+      marginLeft: 10,
+      borderRadius: 30,
+      backgroundColor: 'white',
     },
-
+  
     checkboxText: {
-        flex: 1,
+      flex: 1,
+      marginTop: 20,
+      marginLeft: 10,
     },
-});
+  
+    btnContainer: {
+      flex: 1,
+      width: '100%',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+    },
+  
+    button: { 
+      width: 160,
+      borderWidth: 2,
+      borderRadius: 10,
+      paddingVertical: 3,
+      paddingHorizontal: 30,
+      backgroundColor: 'green',
+    },
+    
+    buttonText: {
+      padding: 5,
+      fontSize: 16,
+      color: 'white',
+      fontWeight: 'bold',
+      textAlign: 'center',
+    },
+  });
