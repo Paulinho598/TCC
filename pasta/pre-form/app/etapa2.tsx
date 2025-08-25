@@ -11,11 +11,14 @@ export default function Etapa2(){
 
     function prosseguir() {
         const isChecked = [isChecked1, isChecked2, isChecked3, isChecked4];
-    
-        if (isChecked.some(checked => checked)) {
-            alert("PÃO DE BATATA");
-            router.replace("/etapa3");
-        } else {
+        const checkedCount = isChecked.filter(Boolean).length
+
+        if (checkedCount == 1) {
+            //alert("PÃO DE BATATA")
+            router.replace("/etapa3")
+        }else if(checkedCount > 1 == true){
+            alert("SELECIONE UMA SÓ OPÇÃO!")
+        }else if(checkedCount == 0){
             alert("ESCOLHA ALGUMA DAS OPÇÕES ACIMA!");
         }
     }
