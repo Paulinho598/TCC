@@ -33,9 +33,11 @@ export default function Etapa3(){
 
         if (checkedCount == 1){
             if (isCheckedYes == true && checkedCount2 >= 1){
-                var doenças = [checkedSickness.map(sickness, index) => {
-                    return sickness
-                }]
+                var doenças = [checkedSickness.filter(String)]
+                console.log(doenças)
+                /*var doenças = [checkedSickness.map(sickness, index) => {
+                    return sickness 
+                }]*/
                 router.replace("/etapa4")
             }else{
                 router.replace("/etapa4")
