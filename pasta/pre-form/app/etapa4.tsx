@@ -1,46 +1,22 @@
-import { useState } from "react";
+import React, { useState } from 'react';
+import { createRoot } from 'react-dom/client';
 import CheckBox from "expo-checkbox";
-import { Link, useRouter } from "expo-router";
-import { TouchableOpacity } from "react-native";
-import { Text, View, Image, StyleSheet } from "react-native";
+import * as ImagePicker from 'expo-image-picker'
+import { Picker } from '@react-native-picker/picker';
+import { Link, router, useRouter } from "expo-router";
+import { View, Text, StyleSheet, TouchableOpacity, TextInput } from "react-native";
 
-export default function Etapa1() {
-  /*const [isChecked1, setChecked1] = useState(false)
-  const [isChecked2, setChecked2] = useState(false)
-  const router = useRouter();
-
-  function prosseguir(){
-      if(isChecked1 == true && isChecked2 == true){
-        router.replace('/etapa2')
-      }else if(isChecked1 == true || isChecked2 == true){
-        alert("É NECESSÁRIO ACEITAR TODOS ACIMA!")
-      }else{
-        alert("PARA CONTINUARES, É NECESSÁRIO ACEITAR TODOS ACIMA!")
-      }
-  }*/
-
-  return (
+export default function Etapa4(){
+  return(
     <View style={estilo.container}>
-      <View style={estilo.imageContainer}>
-        <Image
-          source={require(`./img/proxy-image.jpg`)}
-          style={estilo.img}
-        />
-      </View>
-      
       <View>
-         
-      </View>
 
-      
-      <View style={estilo.btnContainer}>
-        <TouchableOpacity 
-        style={estilo.button}
-        onPressIn={() => {
-          prosseguir()
-        }}>
-          <Text style={estilo.buttonText}>Prosseguir</Text>
-        </TouchableOpacity>
+      </View>
+      <View style={estilo.bloco}>
+      <Text style={estilo.etiqueta}>Nome:</Text>
+      <TextInput
+        style={estilo.input}
+      />
       </View>
     </View>
   );
@@ -60,6 +36,19 @@ const estilo = StyleSheet.create({
 
   imageContainer: {
     marginBottom: 20,
+  },
+
+  input: {
+    width: 250,
+    borderWidth: 2,
+    borderRadius: 20,
+    borderColor: "black",
+    backgroundColor: "white"
+  },
+
+  etiqueta: {
+    fontSize: 20,
+    fontWeight: "bold",
   },
   
   btnContainer: {
