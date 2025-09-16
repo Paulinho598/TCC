@@ -209,9 +209,10 @@ const estilo = StyleSheet.create({
     },
 
     textArea: {
+        padding: 5,
         borderWidth: 2,
-        borderColor: 'black',
         borderRadius: 30,
+        borderColor: 'black',
         backgroundColor: 'lightgray'
     },
   
