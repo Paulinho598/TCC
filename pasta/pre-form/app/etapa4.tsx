@@ -9,24 +9,24 @@ import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, Alert } fro
 export default function Etapa4(){
     const prosseguir = () => {
       if (!data || !peso || !altura) {
-        Alert.alert("Campos obrigatórios", "Por favor, preencha todos os campos!");
+        alert("Campos obrigatórios"+ "Por favor, preencha todos os campos!");
         return;
       }
 
       if (data.length !== 10) {
-        Alert.alert("Data inválida", "Por favor, insira uma data completa no formato DD/MM/AAAA");
+        alert("Data inválida! "+ "\nPor favor, insira uma data completa no formato DD/MM/AAAA");
         return;
       }
 
       const pesoNumero = parseFloat(peso.replace(',', '.'));
       if (isNaN(pesoNumero) || pesoNumero <= 0 || pesoNumero > 300) {
-        Alert.alert("Peso inválido", "Por favor, insira um peso válido entre 1 e 300 kg");
+        alert("Peso inválido! "+ "\nPor favor, insira um peso válido de até 300kg");
         return;
       }
 
       const alturaNumero = parseInt(altura);
-      if (isNaN(alturaNumero) || alturaNumero <= 0 || alturaNumero > 250) {
-        Alert.alert("Altura inválida", "Por favor, insira uma altura válida entre 1 e 250 cm");
+      if (isNaN(alturaNumero) || alturaNumero <= 0 || alturaNumero > 280) {
+        alert("Altura inválida! "+ "\nPor favor, insira uma altura válida de até 280cm");
         return;
       }
 
@@ -159,12 +159,13 @@ const estilo = StyleSheet.create({
     marginVertical: 32,
     alignItems: 'center',
     marginHorizontal: 16,
+    justifyContent: 'center',
     backgroundColor: '#E0F7E9',
   },
 
   bloco:{
     flex: 1,
-    alignItems: 'baseline',
+    alignItems: 'center',
     flexDirection: 'column',
     justifyContent: 'flex-start',
   },
@@ -173,8 +174,7 @@ const estilo = StyleSheet.create({
     marginBottom: 10,
   },
 
-  conjuntoImg: {
-    marginLeft: 30,
+  conjuntoImg:{
     marginBottom: 50,
   },
 
@@ -200,6 +200,9 @@ const estilo = StyleSheet.create({
   img: {
     width: 200,
     height: 200,
+    borderWidth: 3,
+    borderRadius: 100,
+    borderColor: 'black',
     backgroundColor: "null"
   },
 
